@@ -1,2 +1,2 @@
 # country_data_api_explorer
-An implementation of a country data api explorer using the free Countries Data API: https://restcountries.com/ using a Jenkins - Docker - Minikube CI/CD Pipeline
+An Flask based implementation of a country data API explorer using the free Countries Data API: https://restcountries.com/ using a Jenkins - Docker - Minikube CI/CD Pipeline
