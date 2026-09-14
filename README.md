@@ -2,4 +2,4 @@
 A Flask based implementation of a country data API explorer using the free Countries Data API: https://restcountries.com/ using a GitHub - Jenkins - Docker - Minikube CI/CD Pipeline
 - Pull Builds
 - Push Builds
-- AutoSync Pull to Push Directories
+- AutoSync Pull to Push Directories to ensure consistent state
