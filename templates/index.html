@@ -11,7 +11,7 @@
         <h2>Country Data Explorer</h2>
         <p class="lead">A Flask App for Querying the Rest Countries API</p>
       </div>
-      <form method="POST">
+      <form  method="POST" >
       <div class="row">
         <div class="col-md-4 order-md-2 mb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -49,7 +49,9 @@
             <div class="col-md-5">
               <select class="form-select" id="country" required>
                 <option value="">Select a Country...</option>
-                <option>Pakistan</option>
+                {% for country in country_list %}
+                  <option value="{{ country }}">{{ country }}</option>
+                {% endfor %}
               </select>
             </div>
             <button type="submit" class="btn btn-secondary">Search</button>
