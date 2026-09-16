@@ -1,11 +1,12 @@
-from flask import Flask
+from flask import Flask, request, jsonify, render_template
+import requests
 import os
 
 app = Flask(__name__)
 
 @app.route("/")
-def hello():
-	return "Flask inside Docker!!"
+def home():
+	return render_template('index.html')
 
 if __name__ == "__main__":
 	port = int(os.environ.get("PORT", 5000))
