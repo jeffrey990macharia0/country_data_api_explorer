@@ -4,14 +4,21 @@ import os
 
 app = Flask(__name__)
 
-@app.route("/")
-def home():
-	#Query to list all countries
+#Backend Helper Functions
+
+#-- Function to run the API Query to list all countries
+def countrylist():
 	response = requests.get(
 		'https://api.restcountries.com/countries/v5?limit=100',
 		headers={'Authorization': 'Bearer rc_live_819d4a5ec446428a890b8d09546bccb1'}
 	)
 	data = response.json()
+	return data
+
+#Frontend Routes
+@app.route("/")
+def home():
+	data=countrylist()
 	country_list=[]
 
 	for country in data["data"]["objects"]:
