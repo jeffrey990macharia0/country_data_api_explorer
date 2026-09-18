@@ -11,7 +11,7 @@
         <h2>Country Data Explorer</h2>
         <p class="lead">A Flask App for Querying the Rest Countries API</p>
       </div>
-      <form  method="POST" >
+      <form action="{{ url_for('search')}}"  method="POST">
       <div class="row">
         <div class="col-md-4 order-md-2 mb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -22,19 +22,19 @@
               <div>
                 <h6 class="my-0">Capital City</h6>
               </div>
-              <input type="checkbox" id="capitals" name="capitals" value="capitals">
+              <input type="checkbox" id="capitals" name="capitals" >
             </li>
             <li class="list-group-item d-flex justify-content-between lh-sm">
               <div>
                 <h6 class="my-0">Region</h6>
               </div>
-              <input type="checkbox" id="region" name="region" value="region">
+              <input type="checkbox" id="region" name="region" >
             </li>
             <li class="list-group-item d-flex justify-content-between lh-sm">
               <div>
                 <h6 class="my-0">Flag</h6>
               </div>
-              <input type="checkbox" id="flag.url_png" name="flag.url_png" value="flag.url_png">
+              <input type="checkbox" id="flag.url_png" name="flag.url_png">
             </li>
           </ul>
         </div>
@@ -47,7 +47,7 @@
           
           <div class="input-group">
             <div class="col-md-5">
-              <select class="form-select" id="country" required>
+              <select class="form-select" id="country" name="country" required>
                 <option value="">Select a Country...</option>
                 {% for country in country_list %}
                   <option value="{{ country }}">{{ country }}</option>
