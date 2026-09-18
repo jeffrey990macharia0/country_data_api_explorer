@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: explorecountrydata-service
+
+spec:
+  type: NodePort
+
+  selector:
+    app: explorecountrydata-app
+
+  ports:
+    - port: 6000
+      targetPort: 6000
