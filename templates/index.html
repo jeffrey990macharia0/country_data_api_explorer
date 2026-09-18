@@ -68,24 +68,44 @@
                 </div>
                 <div class="card-body">
                   <ul class="list-group mb-3">
+                    {%if country!="" %}
                     <li class="list-group-item d-flex justify-content-between lh-sm">
                       <div>
-                        <h6 class="my-0">Capital City</h6>
+                        <h6 class="my-0">Country</h6>
                       </div>
-                      <p class="text-muted">Hello</p>
+                      <p class="text-muted">{{country}}</p>
                     </li>
+                    {%endif %}
+
+                    {%if capitals_list | length > 0 %}
+                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                      <div>
+                        <h6 class="my-0">Capital Cities</h6>
+                      </div>
+                      {% for capital in capitals_list %}
+                      <p class="text-muted">{{capital}}</p>
+                      {% endfor %}
+                    </li>
+                    {%endif %}
+
+                    {%if region_string!="" %}
                     <li class="list-group-item d-flex justify-content-between lh-sm">
                       <div>
                         <h6 class="my-0">Region</h6>
                       </div>
-                      <p class="text-muted">Hello</p>
+                      <p class="text-muted">{{region_string}}</p>
                     </li>
+                    {%endif %}
+
+                    {%if flag_url!="" %}
                     <li class="list-group-item d-flex justify-content-between lh-sm">
                       <div>
                         <h6 class="my-0">Flag</h6>
                       </div>
-                      <img src="flag.url_png" alt="flag.url_png" height="100px" width="100px">
+                      <img src="{{flag_url}}" alt="flag.url_png" height="100px" width="200px">
                     </li>
+                    {%endif %}
+
                   </ul>
                 </div>
 

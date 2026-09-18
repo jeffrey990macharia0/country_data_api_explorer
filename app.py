@@ -47,9 +47,35 @@ def search():
 	region=request.form.get("region","")
 	flag=request.form.get("flag.url_png","")
 
+	
+
 	#construct the query
-	print(capitals)
-	return render_template('index.html', country_list=country_list)
+	api_key=os.getenv('API_KEY')
+	response = requests.get(
+		'https://api.restcountries.com/countries/v5/names.common/{}'.format(country),
+		headers={'Authorization': api_key}
+	)
+
+	data = response.json()
+
+	capitals_list=[]
+	region_string=""
+	flag_url=""
+
+
+	if capitals:
+		for attribute in data["data"]["objects"][0]["capitals"]:
+			capitals_list.append(attribute["name"])
+
+
+	if region:
+		region_string=data["data"]["objects"][0]["region"]
+
+	if flag:
+		flag_url=data["data"]["objects"][0]["flag"]["url_png"]
+
+
+	return render_template('index.html', country_list=country_list,country=country,capitals_list=capitals_list,region_string=region_string,flag_url=flag_url)
 
 
 if __name__ == "__main__":
