@@ -30,7 +30,7 @@ def home():
 		country_name=country["names"]["common"]
 		country_list.append(country_name)
 
-	return render_template('index.html', country_list=country_list)
+	return render_template('index.html', country_list=country_list,country="",capitals_list=[],region_string="",flag_url="")
 
 @app.route("/search",methods=['POST'])
 def search():
@@ -79,7 +79,7 @@ def search():
 
 
 if __name__ == "__main__":
-	port = int(os.environ.get("PORT", 6000))
+	port = int(os.environ.get("PORT", 5000))
 	app.run(debug=True,host='0.0.0.0',port=port)
 
 #include Tests for this code

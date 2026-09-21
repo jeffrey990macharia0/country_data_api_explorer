@@ -11,5 +11,5 @@ spec:
     app: explorecountrydata-app
 
   ports:
-    - port: 6000
-      targetPort: 6000
+    - port: 5000
+      targetPort: 5000
